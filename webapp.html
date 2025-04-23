@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dad Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding: 50px;
+    }
+    #joke-box {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+    #question, #answer {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #reveal-btn {
+      background-color: #007BFF;
+      color: white;
+    }
+    #restart-btn {
+      background-color: #28a745;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="joke-box">
+  <div id="question"></div>
+  <div id="answer" style="display: none;"></div>
+  <button id="reveal-btn">Reveal Answer</button>
+  <button id="restart-btn" style="display: none;">Another Joke</button>
+</div>
+
+<script>
+  const jokes = [
+    { question: "Why don't eggs tell jokes?", answer: "Because they’d crack each other up!" },
+    { question: "What do you call fake spaghetti?", answer: "An impasta!" },
+    { question: "Why did the scarecrow win an award?", answer: "Because he was outstanding in his field!" },
+    { question: "Why can't you hear a pterodactyl go to the bathroom?", answer: "Because the 'P' is silent!" },
+    { question: "How does a penguin build its house?", answer: "Igloos it together." },
+  ];
+
+  const questionEl = document.getElementById("question");
+  const answerEl = document.getElementById("answer");
+  const revealBtn = document.getElementById("reveal-btn");
+  const restartBtn = document.getElementById("restart-btn");
+
+  let currentJoke = null;
+
+  function getRandomJoke() {
+    return jokes[Math.floor(Math.random() * jokes.length)];
+  }
+
+  function displayJoke() {
+    currentJoke = getRandomJoke();
+    questionEl.textContent = currentJoke.question;
+    answerEl.style.display = "none";
+    answerEl.textContent = currentJoke.answer;
+    revealBtn.style.display = "inline-block";
+    restartBtn.style.display = "none";
+  }
+
+  revealBtn.addEventListener("click", () => {
+    answerEl.style.display = "block";
+    revealBtn.style.display = "none";
+    restartBtn.style.display = "inline-block";
+  });
+
+  restartBtn.addEventListener("click", displayJoke);
+
+  // Initialize with the first joke
+  displayJoke();
+</script>
+
+</body>
+</html>

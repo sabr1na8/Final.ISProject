@@ -1,0 +1,280 @@
+body {
+    background-color: rgb(176, 208, 254);
+}
+
+.link-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #5487f6;
+    font-size: 0.9rem; /* makes it a bit smaller */
+}
+
+.link-box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.link-box a:hover {
+    background-color: #333;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #ffe6f0, #f0e6ff);
+    border-bottom: 2px solid #ccc;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* h1 styles */
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.5rem;
+    color: #ffffff;
+    -webkit-text-stroke: 1px black;
+    margin: 0;
+}
+
+/* nav styles (same links, new placement) */
+header .link-box {
+    display: flex;
+    gap: 15px;
+}
+
+header .link-box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+header .link-box a:hover {
+    background-color: #333;
+    color: white;
+}
+/* Style for the header */
+h1 {
+    text-align: center;  /* Centers the header */
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #ff69b4;  /* Cute pink */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ff69b4;  /* Pink border around the header */
+    border-radius: 10px;
+    display: inline-block;  /* Keeps the header inline with the border */
+}
+
+iframe {
+    position: absolute;
+    top: 175px;  /* Adjusts the distance from the top */
+    right: 20px;  /* Adjusts the distance from the right */
+    width: 320px;  /* Makes the video smaller */
+    height: 180px;  /* Makes the video smaller */
+    border-radius: 10px;
+}
+
+/* Style for the ordered list */
+ol {
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 1.1rem;
+    border: 2px solid #ff69b4;  /* Pink border around the list */
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;  /* Makes the list only as wide as its content */
+    margin-top: 20px;
+    background-color: #f0e6ff;  /* Light purple background */
+    margin-bottom: 10px;  /* Adds some space below the ordered list */
+    border-bottom: 3px solid #ff69b4;  /* Adds a pink underline below the list */
+}
+
+/* Style for the list items */
+ol li {
+    margin: 8px 0;
+    font-weight: bold;
+    color: #2d4059;  /* Dark blue-gray for the text */
+}
+
+/* Style the list numbers */
+ol li::marker {
+    color: #2d4059;  /* Pink numbers */
+}
+
+ul {
+    list-style-type: disc;  /* Default bullet points */
+    padding-left: 20px;  /* Indentation for the list */
+    margin-top: 10px;  /* Space between the ordered and unordered lists */
+}
+
+/* Style for the unordered list items */
+ul li {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+    font-weight: normal;
+}
+/* Floating Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Make sure there is no extra padding or margin around the top anchor */
+#top {
+    display: block; /* Ensures it's treated as a block element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+
+/* Center the entire catalog and make it look like a cute collage */
+.image-catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 images per row by default */
+    gap: 20px;  /* Space between images */
+    max-width: 90%;  /* Limit the width to keep it centered */
+    margin: 30px auto;  /* Center the catalog on the page */
+    padding: 10px;
+}
+
+.catalog-item {
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-item h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.catalog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects */
+.catalog-item:hover {
+    background-color: #e6f7ff;  /* Light blue background when hovered */
+}
+
+.catalog-item:hover .catalog-image {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Enhanced shadow on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 1200px) {
+    .image-catalog {
+        grid-template-columns: repeat(3, 1fr);  /* 3 images per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-catalog {
+        grid-template-columns: repeat(2, 1fr);  /* 2 images per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-catalog {
+        grid-template-columns: 1fr;  /* 1 image per row */
+    }
+}
+
+/* Ensure the header, links, and other sections are not affected */
+header, ol, iframe {
+    margin-top: 20px;
+}
+
+/* Adjusting margins and spacing where needed for the rest of the page */
+
+/* Add these styles to your existing CSS */
+
+/* Wrapper for the ordered list and image catalog */
+.content-wrapper {
+    display: flex; /* Use Flexbox for side-by-side layout */
+    justify-content: space-between; /* Space out the content */
+    gap: 30px; /* Space between the ordered list and image section */
+    margin-top: 30px; /* Optional: Add margin to the top */
+    padding: 0 20px; /* Optional: Add padding to sides */
+}
+
+/* Styling for the ordered list (left side) */
+.places-list {
+    flex: 1; /* Allow this section to take up available space */
+}
+
+/* Styling for the image catalog (right side) */
+.image-catalog {
+    flex: 1; /* Allow this section to take up available space */
+    display: grid; /* Use CSS grid for the images */
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns for images */
+    gap: 20px; /* Space between images */
+}
+
+/* Styling each image item */
+.catalog-item {
+    text-align: center;
+}
+
+/* Style for each image */
+.catalog-item img {
+    width: 100%; /* Ensure the image takes up the width of the container */
+    max-width: 180px; /* Limit the width of the images */
+    height: auto;
+    border-radius: 8px; /* Round the corners of the images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to the images */
+}
+
+/* Style for headings inside the image catalog */
+.catalog-item h2 {
+    font-size: 14px; /* Smaller font size for titles */
+    color: #333;
+    margin-bottom: 10px; /* Space between title and image */
+}
+
